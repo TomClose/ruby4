@@ -27,9 +27,26 @@ end
 #
 def frequencies(text)
     puts "Counting words..."
-    ## TODO write this function
 
-    return {'everyone'=>15, 'code first girls'=>30, 'loves'=>20, 'ruby'=>40}
+    words = text.split
+    word_frequencies = {}
+
+    words.each do |word|
+      if word_frequencies.has_key?(word)
+        word_frequencies[word] += 1 # Remember, `x += 1` is equivalent to `x = x + 1`
+      else
+        word_frequencies[word] = 1
+      end
+    end
+
+    # Alternative:
+    #
+    # word_frequencies = Hash.new(0)
+    # words.each do |word|
+    #   word_frequencies[word] += 1
+    # end
+
+    return word_frequencies
 end
 
 
@@ -43,13 +60,16 @@ end
 # Takes in a hash of words and requencies and removes the
 # stop_words above
 #
-#   e.g. remove_stopwords({"a"=>2, "cat"=> 1, "and"=>1, "dog"=>1})
+#   e.g. remove_stop_words({"a"=>2, "cat"=> 1, "and"=>1, "dog"=>1})
 #         #=> {"cat" => 1, "dog" => 1}
 #
-def remove_stopwords(hash)
+def remove_stop_words(hash)
     puts "Filtering out common words..."
-    # TODO filter the frequencies based on
-    # the stop_words
+
+    stop_words.split('|').each do |stop_word|
+      hash.delete(stop_word)
+    end
+
     return hash
 end
 
@@ -66,5 +86,5 @@ end
 
 # when we call the file from the command line
 # this is the line that will run.
-write_html(remove_stopwords(frequencies(text)))
+write_html(remove_stop_words(frequencies(text)))
 
