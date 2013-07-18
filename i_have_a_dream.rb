@@ -43,10 +43,10 @@ end
 # Takes in a hash of words and requencies and removes the
 # stop_words above
 #
-#   e.g. remove_stopwords({"a"=>2, "cat"=> 1, "and"=>1, "dog"=>1})
+#   e.g. remove_stop_words({"a"=>2, "cat"=> 1, "and"=>1, "dog"=>1})
 #         #=> {"cat" => 1, "dog" => 1}
 #
-def remove_stopwords(hash)
+def remove_stop_words(hash)
     puts "Filtering out common words..."
     # TODO filter the frequencies based on
     # the stop_words
@@ -66,5 +66,5 @@ end
 
 # when we call the file from the command line
 # this is the line that will run.
-write_html(remove_stopwords(frequencies(text)))
+write_html(remove_stop_words(frequencies(text)))
 
