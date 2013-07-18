@@ -4,7 +4,6 @@
 #
 def symbolize_keys(h)
     new_h = {}
-    # iterate over h and put the values into new_h
-
+    h.each {|k, v| new_h[k.to_sym] = v}
     return new_h
 end
