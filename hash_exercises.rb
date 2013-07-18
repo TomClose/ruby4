@@ -5,6 +5,7 @@
 #
 def add_a_banana(input_hash)
     # TODO
+    # Look at Setting elements in hash_examples
 end
 
 # no_oranges removes the key 'orange' (and its
@@ -16,7 +17,7 @@ end
 #  no_oranges({'pear'=>'ripe', 'apple'=>'sour'}) #=> {'pear'=>'ripe', 'apple'=>'sour'}
 #
 def no_oranges(input_hash)
-    # TODO
+    # you need to 'delete' the key 'orange'
 end
 
 
@@ -29,7 +30,7 @@ end
 #  duck_or_moose({'dog'=> 'snoopy'}) #=> 'moose'
 #
 def duck_or_moose(input_hash)
-    # TODO
+    # how do you test whether a hash has a key?
 end
 
 
@@ -43,7 +44,7 @@ end
 #   wheres_wally({'a'=> 'wally'}) #=> "here!"
 #
 def wheres_wally(input_hash)
-    # TODO
+    # how do you test whether a hash has a value?
 end
 
 
@@ -59,7 +60,7 @@ end
 #    #=> nil
 #
 def pretty_print(hash)
-    # TODO
+    # how do you iterate over a hash?
 end
 
 
@@ -74,7 +75,8 @@ end
 #
 def order_price(order)
     prices = {'jaegerbomb'=>5.5, 'becks'=>3.5}
-    # TODO
+    # you need to iterate over one hash and
+    # pull values from the other
 end
 
 # count_words returns the words in a sentence
@@ -85,7 +87,12 @@ end
 #       'been'=> 1, 'which'=>1}
 #
 def count_words(sentence)
-    # TODO
+    # you first need to split sentence into an
+    # array
+    # Then you can iterate over that array, putting
+    # the values into your hash.
+    # See the "Using a hash for counting" section in
+    # hash_examples.
 end
 
 
@@ -99,8 +106,9 @@ end
 #   tell_story({'adj2'=>'steamy'}) #=> "It was a dark and steamy night ..."
 #
 def tell_story(opts={})
-    # TODO put in the defaults if no value provided
-
+    # Set up a hash containing the defaults.
+    # Then use merge.
+    
     # leave this alone
     story_beginning(opts)
 end
