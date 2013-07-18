@@ -4,7 +4,8 @@
 #   add_a_banana({'a'=>1}) #=> {'a'=> 1, 'fruit'=> 'banana'}
 #
 def add_a_banana(input_hash)
-    # TODO
+    input_hash['fruit']='banana'
+    input_hash
 end
 
 # no_oranges removes the key 'orange' (and its
