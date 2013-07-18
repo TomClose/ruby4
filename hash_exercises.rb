@@ -17,7 +17,8 @@ end
 #  no_oranges({'pear'=>'ripe', 'apple'=>'sour'}) #=> {'pear'=>'ripe', 'apple'=>'sour'}
 #
 def no_oranges(input_hash)
-    # TODO
+    input_hash.delete('orange')
+    input_hash
 end
 
 
@@ -30,7 +31,11 @@ end
 #  duck_or_moose({'dog'=> 'snoopy'}) #=> 'moose'
 #
 def duck_or_moose(input_hash)
-    # TODO
+    if input_hash.has_key?('duck')
+        input_hash['duck']
+    else
+        'moose'
+    end
 end
 
 
@@ -44,7 +49,11 @@ end
 #   wheres_wally({'a'=> 'wally'}) #=> "here!"
 #
 def wheres_wally(input_hash)
-    # TODO
+    if input_hash.has_value?('wally')
+        'here!'
+    else
+        'not here'
+    end
 end
 
 
@@ -75,7 +84,11 @@ end
 #
 def order_price(order)
     prices = {'jaegerbomb'=>5.5, 'becks'=>3.5}
-    # TODO
+    total = 0
+    order.each do |key, value|
+        total += value * prices[key]
+    end
+    total
 end
 
 # count_words returns the words in a sentence
