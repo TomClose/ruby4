@@ -69,7 +69,11 @@ end
 #    #=> nil
 #
 def pretty_print(hash)
-    # TODO
+    hash.each do |k, v|
+        puts "Key #{k} has value #{v}."
+    end
+    puts "There are no more keys."
+    return nil
 end
 
 
@@ -99,7 +103,11 @@ end
 #       'been'=> 1, 'which'=>1}
 #
 def count_words(sentence)
-    # TODO
+    h = Hash.new(0)
+    sentence.split.each do |word|
+        h[word] += 1
+    end
+    h
 end
 
 
@@ -113,8 +121,7 @@ end
 #   tell_story({'adj2'=>'steamy'}) #=> "It was a dark and steamy night ..."
 #
 def tell_story(opts={})
-    # TODO put in the defaults if no value provided
-
+    opts = {'adj1' => 'dark', 'adj2'=>'stormy', 'time_of_day'=>'night'}.merge(opts)
     # leave this alone
     story_beginning(opts)
 end
